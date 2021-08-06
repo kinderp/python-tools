@@ -24,7 +24,7 @@ Notes about python tools
 * Managing Different Virtual Environments for testing
   - tox 
 
-### Plauground
+### Playground
 
 Before doing anything you shuold:
 
