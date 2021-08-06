@@ -120,4 +120,5 @@ We'll follow this [tutorial](https://packaging.python.org/tutorials/packaging-pr
     [options.packages.find]
     where = src
     ```
+    ![pypu project page](https://github.com/kinderp/python-tools/blob/main/images/test-pypy-project.png)
     
