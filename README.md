@@ -24,3 +24,4 @@ Notes about python tools
 * Managing Different Virtual Environments for testing
   - tox 
   
+### Packaging and Distributing a python project
