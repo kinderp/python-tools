@@ -1,0 +1,7 @@
+# https://stackoverflow.com/questions/55826439/how-does-the-dependency-resolution-works-with-pip-when-a-package-specify-a-range
+#
+# https://github.com/getsentry/sentry-python/blob/0.7.11/setup.py
+# https://github.com/psf/requests/blob/v2.21.0/setup.py
+sentry-sdk==0.7.11
+requests==2.21.0
+urllib3<1.25
