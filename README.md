@@ -61,3 +61,63 @@ Lab takes space on disk so it's a good idea removing it after your training sess
 * `vagrant destroy`
 
 ### Packaging and Distributing a python project
+
+We'll follow this [tutorial](https://packaging.python.org/tutorials/packaging-projects/)
+
+* `cd /vagrant/examples/packaging_python_projects/`
+  ```    .
+  ├── LICENSE
+  ├── pyproject.toml
+  ├── README.md
+  ├── setup.cfg
+  ├── src
+  │   └── example_package
+  │       ├── example.py
+  │       └── __init__.py
+  └── tests
+  ```
+  
+  * **pyproject.toml** [doc](https://www.python.org/dev/peps/pep-0518/)
+    ```toml
+    [build-system]
+    requires = [
+      "setuptools>=42",
+      "wheel"
+    ]
+    build-backend = "setuptools.build_meta"
+    ```
+    
+    > pyproject.toml tells build tools (like pip and build) what is required to build your project. 
+    >
+    > `build-system.requires` gives a list of packages that are needed to build your package. Listing something here will only make it available during the build, not after it is installed.
+    >
+    > `build-system.build-backend` is the name of Python object that will be used to perform the build. If you were to use a different build system, such as flit or poetry, those would go here, and the configuration details would be completely different than the setuptools configuration described below
+    
+  * **setup.cfg** **setup.py** [doc](https://setuptools.readthedocs.io/en/latest/userguide/declarative_config.html)
+    ```
+    [metadata]
+    name = example-pkg-acaristia
+    version = 0.0.1
+    author = Antonio Carisita
+    author_email = a.caristia@nephila.digital
+    description = Python tools workshop
+    long_description = file: README.md
+    long_description_content_type = text/markdown
+    url = https://github.com/pypa/sampleproject
+    project_urls =
+        Bug Tracker = https://github.com/pypa/sampleproject/issues
+    classifiers =
+        Programming Language :: Python :: 3
+        License :: OSI Approved :: MIT License
+        Operating System :: OS Independent
+
+    [options]
+    package_dir =
+        = src
+    packages = find:
+    python_requires = >=3.6
+
+    [options.packages.find]
+    where = src
+    ```
+    
